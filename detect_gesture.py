@@ -33,7 +33,7 @@ while camera.isOpened():
 
     k = cv2.waitKey(10)
     if k == 32:
-        # frame = np.stack((frame,)*3, axis=-1)
+        # frame = np.stack((frame,)*3, axis=-1)     # breaks the app
         frame = cv2.resize(frame, (28, 28))
         frame = frame.reshape(1, 28, 28, 3)
         prediction, score = predict_image(frame)
